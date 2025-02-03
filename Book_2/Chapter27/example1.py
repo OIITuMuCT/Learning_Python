@@ -5,6 +5,7 @@ class FirstClass:
         print(self.data)
 
 
+
 if __name__ == '__main__':
     first = FirstClass()
     first.setdata("Potato")
@@ -14,3 +15,5 @@ if __name__ == '__main__':
     tomato.display()
     tomato.data = "Cucumber"
     tomato.display()
+    second = SecondClass()
+    second.display()
