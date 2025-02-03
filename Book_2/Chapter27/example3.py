@@ -22,7 +22,9 @@ if __name__ == "__main__":
     a = ThirdClass("abc")
     a.display()
     print(a + 'zya')
+    print(a.data)
     b = a + "xyz"
+    print(b.data)
     b.display()
     c = a.plus('PYTHON')
     print(isinstance(c, ThirdClass))
@@ -32,4 +34,5 @@ if __name__ == "__main__":
     a.display()
     print(a)
     print(isinstance(b, ThirdClass))
+    print(ThirdClass.__bases__)
 
