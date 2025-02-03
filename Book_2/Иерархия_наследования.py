@@ -18,5 +18,5 @@ if __name__ == '__main__':
     I1 = C1('Bob')
     I2 = C1('Sue')
     print(I1.name)
-    I3 = C2()
-    print(I3.y)
+    I3 = C1('Emma')
+    print(I3.z)
