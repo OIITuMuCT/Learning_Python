@@ -11,9 +11,9 @@ class Person:
         return f'[Person: {self.name}, {self.pay}]'
 
 
-
 class Manager(Person):
-    pass
+    def giveRaise(self, percent, bonus=0.10):               # Плохой способ:
+        self.pay = int(self.pay * (1 * percent + bonus))    # вырезание и вставка
 
 
 if __name__ == '__main__':
