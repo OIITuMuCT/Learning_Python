@@ -7,6 +7,8 @@ class Person:
         return self.name.split()[-1]
     def giveRaise(self, percent):
         self.pay = int(self.pay * (1 + percent))
+    def __repr__(self):
+        return f'[Person: {self.name}, {self.pay}]'
 
 
 
@@ -17,11 +19,12 @@ class Manager(Person):
 if __name__ == '__main__':
     bob = Person('Bob Smith')
     sue = Person('Sue Jones', job='dev', pay=100000)
-    
     print(bob.name, bob.pay)
     print(sue.name, sue.pay)
-    print(bob.name.split()[-1])
-    sue.pay *=1.10
-    print('%.2f' % sue.pay)
+    print(bob.lastName(), sue.lastName())
+    sue.giveRaise(.10)
     print(sue.pay)
-    
+    print(sue.__dict__)
+    print(list(name for name in Person.__dict__.keys() if not name.endswith('__')))
+    print(bob)
+    print(sue)
