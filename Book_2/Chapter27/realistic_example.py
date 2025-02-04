@@ -12,8 +12,8 @@ class Person:
 
 
 class Manager(Person):
-    def giveRaise(self, percent, bonus=0.10):               # Плохой способ:
-        self.pay = int(self.pay * (1 * percent + bonus))    # вырезание и вставка
+    def giveRaise(self, percent, bonus=.10):    # Хороший способ:
+        Person.giveRaise(self, percent + bonus) # исходной версии
 
 
 if __name__ == '__main__':
@@ -28,3 +28,12 @@ if __name__ == '__main__':
     print(list(name for name in Person.__dict__.keys() if not name.endswith('__')))
     print(bob)
     print(sue)
+    tom = Manager('Tom Jones', 'mgr', 50000)  # Создать экземпляр
+    tom.giveRaise(.10)
+    print(tom.lastName())
+    print(tom)
+    print('--All three--')
+    for obj in (bob, sue, tom):
+        obj.giveRaise(.10)
+        print(obj)
+
