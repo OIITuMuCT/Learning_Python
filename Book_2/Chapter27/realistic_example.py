@@ -12,8 +12,12 @@ class Person:
 
 
 class Manager(Person):
+    def __init__(self, name, pay):
+        Person.__init__(self, name, 'mgr', pay)
     def giveRaise(self, percent, bonus=.10):    # Хороший способ:
         Person.giveRaise(self, percent + bonus) # исходной версии
+    def someThingElse(self):
+        ...
 
 
 if __name__ == '__main__':
@@ -28,7 +32,8 @@ if __name__ == '__main__':
     print(list(name for name in Person.__dict__.keys() if not name.endswith('__')))
     print(bob)
     print(sue)
-    tom = Manager('Tom Jones', 'mgr', 50000)  # Создать экземпляр
+    # tom = Manager('Tom Jones', 'mgr', 50000)  # Создать экземпляр
+    tom = Manager('Tom Jones', 50000)
     tom.giveRaise(.10)
     print(tom.lastName())
     print(tom)
@@ -37,3 +42,7 @@ if __name__ == '__main__':
         obj.giveRaise(.10)
         print(obj)
 
+    tom.lastName()
+    # tom.giveRaise()
+    print(tom.someThingElse())
+    print(tom)
