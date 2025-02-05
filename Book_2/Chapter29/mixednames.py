@@ -6,5 +6,6 @@ class MixedNames:
         print(self.data, MixedNames.data)
 
 if __name__ == '__main__':
-    mix = MixedNames('Eggs')
-    mix.display()
+    x = MixedNames(1)
+    y = MixedNames(2)
+    (x.display(), y.display())
