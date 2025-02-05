@@ -1,3 +1,5 @@
+"""  """
+
 class Person:
     def __init__(self, name, jobs, age=None): # Класс = данные + логика
         self.name = name

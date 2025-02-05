@@ -23,7 +23,11 @@ class Manager:
         return getattr(self.person, attr)
     def __repr__(self):
         return str(self.person)
-    
+
+
+
+
+
 if __name__=='__main__':
     bob = Person('Bob Smith')
     sue = Person('Sue Jones', job='dev', pay=100000)
