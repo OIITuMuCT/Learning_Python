@@ -8,7 +8,7 @@ class Super:
         print('is Super.method')                # Стандартное поведение
     def delegate(self):
         self.action()                           # Ожидает определение метода
-    
+
 class Inheritor(Super):                         # Буквальное наследование метода
     """
     Не предоставляет никаких новых имен, поэтому получает все, 
@@ -47,3 +47,6 @@ if __name__ == '__main__':
     print('\nProvider...')
     x = Provider()
     x.delegate()
+    print(Super.__name__, Super.__doc__)
+    print(Inheritor.__name__, Inheritor.__doc__)
+    
