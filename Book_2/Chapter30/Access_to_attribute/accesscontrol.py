@@ -1,11 +1,14 @@
-import sqlite3
 
-def main():
-    s= sqlite3.connect('mydb')
-    cur = conn.cursor()
-    cur.execute('''CREATE TABLE Accesscontrol''')
-    conn.commit()
-    conn.close()
+class Accesscontrol:
+    def __setattr__(self, attr, value):
+        if attr == 'age':
+            self.__dict__[attr] = value + 10
+        else:
+            raise AttributeError(attr + ' not allowed')
 
 if __name__ == '__main__':
-    main()
+    X = Accesscontrol()
+    X.age = 40
+    print(X.age)
+    X.name = 'Bob'
+    print(X.name)
