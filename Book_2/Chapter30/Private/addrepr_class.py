@@ -10,6 +10,7 @@ class addrepr(adder):
     def __repr__(self):
         return 'addrepr (%s)' % self.data
 
+
 x = addrepr(2)
 x.__add__(1)
 x.__init__(5)
@@ -17,3 +18,5 @@ x.__add__(1)
 print(x)
 print(type(x))
 print(x.__class__)
+print(x.__repr__)
+print(adder.__repr__)
