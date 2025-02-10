@@ -22,5 +22,8 @@ if __name__ == '__main__':
     # y.name = 'Sue'
     print(x.name)
     y.age = 30
+
     # x.age = 40
     print(y.age)
+    print(y.name)
+    
