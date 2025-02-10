@@ -14,3 +14,11 @@ if __name__ == "__main__":
     y += [2]
     y += [3]
     print(y.val)
+    z = Number([])
+    for i in range(int(input())):
+        y +=[i]
+    print(z.val)
+    print(y.val)
+    print(y)
+    for i in y:
+        print(y[i])
