@@ -21,6 +21,6 @@ class ListInstance:
             id(self),
             self.__attrnames()
         )
+        
 if __name__ == '__main__':
-    import testmixin
-    testmixin.tester(ListInstance)
+    print('ListInstance')
