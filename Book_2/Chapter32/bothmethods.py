@@ -14,4 +14,6 @@ if __name__ == '__main__':
     Methods.imeth(obj, 2)
     Methods.smeth(3)
     obj.smeth(4)
+    Methods.cmeth(5)
+    obj.cmeth(6)
     
