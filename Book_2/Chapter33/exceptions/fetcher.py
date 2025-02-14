@@ -3,8 +3,10 @@ def fetcher(obj, index):
         return "Index Error"
     else:
         return obj[index]
-    
+
+
 if __name__ =='__main__':
     x = 'spam'
     print(fetcher(x, 3))
+    print(fetcher(x, 4))
     
