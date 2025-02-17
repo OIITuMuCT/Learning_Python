@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/neko/Documents/Projects/Mark Lutz/Book_2/Chapter36/badly.py", line 6, in <module>
+    inverse(0)
+  File "/home/neko/Documents/Projects/Mark Lutz/Book_2/Chapter36/badly.py", line 4, in inverse
+    return 1/ x
+           ~^~~
+ZeroDivisionError: division by zero
