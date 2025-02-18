@@ -21,10 +21,12 @@ if __name__ == '__main__':
     print(bob.name)                 # Запускается метод getter свойства name (name1)
     bob.name = 'Robert Smith'       # Запускается метод setter свойства name (name2) 
     print(bob.name)
+
     del bob.name                    # Запускается метод deleter свойства name (name3) 
-    
+
     print('-'*20)
     sue = Person('Sue Jones')       # Экземпляр sue тоже наследует свойство
     print(sue.name)
     print(Person.name.__doc__)      # Или help(Person.name)
     # print(help(Person.name))
+    print(list(sue.__dict__.keys()))
