@@ -1,5 +1,9 @@
 class Name:
-    "name descriptor docs"
+    """___________________________________________________
+    Дескриптор, работает с данными, хранящимися
+    в экземпляре клиентского класса.
+___________________________________________________"""
+    # "name descriptor docs"
     def __get__(self, instance, owner):
         print('fetch...')
         return instance._name

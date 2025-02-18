@@ -1,4 +1,10 @@
+# filename desc_computed.py
+
 class DescSquare:
+    """
+    Дескриптор,  задействует данные, присоединенные 
+    к самому объекту дескриптора(self) 
+    """
     def __init__(self, start):
         self._value = start
     def __get__(self, instance, owner):
