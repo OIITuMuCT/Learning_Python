@@ -18,13 +18,19 @@ class DescState:    # Использование состояния дескри
 
 
 # Клиентский класс
-class CalsAttrs:
+class CalcAttrs:
     X = DescState(2)        # Атрибут класса дескриптора
     Y = 3                   # Атрибут класса
     def __init__(self):
         self.Z = 4          # Атрибут экземпляра
 
 
-obj = CalsAttrs()
+obj = CalcAttrs()
 print(obj.X, obj.Y, obj.Z)
-print(DescState.__doc__)
+obj.X = 5
+CalcAttrs.Y = 6
+obj.Z = 7
+print(obj.X, obj.Y, obj.Z)
+obj2 = CalcAttrs()
+print(obj2.X, obj2.Y, obj2.Z)
+
