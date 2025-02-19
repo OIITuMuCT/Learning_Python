@@ -22,3 +22,4 @@ if __name__ == '__main__':
     print(getattr(I, 'managed'))
     for attr in (x for x in dir(I) if not x.startswith('__')):
         print('%s => %s' % (attr, getattr(I, attr)))
+    print()
