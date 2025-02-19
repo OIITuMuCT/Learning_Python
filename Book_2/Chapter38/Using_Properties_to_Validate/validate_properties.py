@@ -29,7 +29,7 @@ class CardHolder(object):
     age = property(getAge, setAge)
 
     def getAcct(self):
-        return self.__acct[:3] + "***"
+        return self.__acct[:-3] + "***"
 
     def setAcct(self, value):
         value = value.replace("-", "")

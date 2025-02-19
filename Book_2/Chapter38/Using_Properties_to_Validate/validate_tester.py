@@ -1,12 +1,17 @@
+""" 
+# python validate_tester.py validate_properties команда для запуска  
+"""
 from __future__ import print_function
 
 def loadclass():
     import sys, importlib
     modulename = sys.argv[1]
     module = importlib.import_module(modulename)
-    
+
     print('[Using: %s]' % module.CardHolder)
     return module.CardHolder
+
+
 def printholder(who):
     print(who.acct, who.name, who.age, who.remain, who.addr, sep=' / ' )
 
