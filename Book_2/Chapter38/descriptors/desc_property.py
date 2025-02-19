@@ -22,10 +22,11 @@ class Property:
 class Person:
     def getName(self): print('getName...')
     def setName(self, value): print('setName...')
+    # def delName(self, instance): print('remove...')
     name = Property(getName, setName)
 
 if __name__ == '__main__':
     x = Person()
     x.name
     x.name = 'Bob'
-    del x.name
+    # del x.name
