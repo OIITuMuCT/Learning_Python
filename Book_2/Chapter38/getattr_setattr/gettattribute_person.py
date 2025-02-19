@@ -2,12 +2,11 @@ class Person:
     def __init__(self, name):
         self._name = name
 
-    def __getattr__(self, attr):
+    def __getattribute__(self, attr):               # При [obj .любой_атрибут]
         print("get: " + attr)
-        if attr == "name":
-            return self._name
-        else:
-            raise AttributeError(attr)
+        if attr == "name":                          # Перехват всех имен
+            attr = "_name"                          # Отображение на внутреннее имя
+        return object.__getattribute__(self, attr)  # Избегание зацикливания
 
     def __setattr__(self, attr, value):
         print("set: " + attr)
