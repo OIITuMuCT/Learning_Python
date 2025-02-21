@@ -1,13 +1,14 @@
 def decorator(func):
     print('Вычисляется сумма а и б возведенная в квадрат')
+    res = 0
     def func(*args):
-        a = 5
-        b = 10
-        return (a + b) ** 2
-    print("Результат:")
+        a, b = args
+        print( a+b )
+        return  f'Result: {sum(a, b)**2}'
+    print(f"Результат: {func}")
     return func
 
 @decorator
 def func(): ...
 
-print(func())
+func(5, 10)

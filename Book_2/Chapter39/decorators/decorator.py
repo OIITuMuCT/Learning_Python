@@ -1,11 +1,13 @@
 def decorator(F):
     def wrapper(*args):
-        F(*args)
+        x, y = args
+        F(x, y)
         print(*args)
+        print(x+y)
     return wrapper
 
 @decorator
 def func(x, y):
-    return print(x + y)
+    ...
 
 func(6, 7)
