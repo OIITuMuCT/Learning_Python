@@ -1,3 +1,7 @@
-import second
+# import second
 X = 99
-print(X)
+
+def setX(new):
+    global X
+    X = new
+
