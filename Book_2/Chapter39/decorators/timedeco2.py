@@ -8,11 +8,11 @@ def timer(label='', trace=True):
         def __call__(self, *args, **kwargs):
             start = time.time()
             result = self.func(*args, **kwargs)
-            elapsed = time.clock() - start
+            elapsed = time.time() - start
             self.alltime += elapsed
             if trace:
                 format = '%s %s: %.5f, %.5f'
-                falues = (label, self.func.__name__, elapsed, self.alltime)
+                values = (label, self.func.__name__, elapsed, self.alltime)
                 print(format % values)
             return result
     return Timer
