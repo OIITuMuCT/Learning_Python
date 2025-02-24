@@ -1,6 +1,8 @@
 # Сортировка по возрастанию
 # A = [4, 2, 5, 1, 3]
 """ Время работы алгоритмов  O(N**2)"""
+
+
 def insert_sort(A):
     """ Сортировка списка А вставками """
     N = len(A)
@@ -48,6 +50,7 @@ def test_sort(sort_algorithm):
     print("OK" if A == A_sorted else "Fail")
 
 if __name__ == '__main__':
+
     test_sort(insert_sort)
     test_sort(choice_sort)
     test_sort(bubble_sort)
