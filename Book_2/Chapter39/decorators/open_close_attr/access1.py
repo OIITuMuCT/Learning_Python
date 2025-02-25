@@ -7,7 +7,7 @@ Private возвращает onDecorator, onDecorator возвращает onIns
 """
 traceMe = False
 def trace(*args):
-    if traceMe: 
+    if traceMe:
         print('['+ ' '.join(map(str, args)) + ']')
 
 
