@@ -60,3 +60,5 @@ if __name__ == '__main__':
     X.name = 'Sue'
     print(X.name)
     # print(X.age)
+    X.age = 'Tom'
+    
