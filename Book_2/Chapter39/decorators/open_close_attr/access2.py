@@ -22,11 +22,11 @@ def trace(*args):
 def accessControl(failIf):
     def onDecorator(aClass):
         class onInstance:
-            def __init__(self, **args, **kwargs):
+            def __init__(self, *args, **kwargs):
                 self.__wrapped = aClass(*args, **kwargs)
             
             def __getattr__(self, attr):
-                trace('get: ' attr)
+                trace('get: ', attr)
                 if failIf(attr):
                     raise TypeError('private attribute fetch: ' + attr)
                 else:
@@ -49,3 +49,14 @@ def Private(*attributes):
 def Public(*attributes):
     return accessControl(failIf=(lambda attr: attr not in attributes))
 
+if __name__ == '__main__':
+    @Private('age')
+    class Person:
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
+    X = Person('Bob', 40)
+    print(X.name)
+    X.name = 'Sue'
+    print(X.name)
+    # print(X.age)
