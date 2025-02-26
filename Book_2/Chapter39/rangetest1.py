@@ -8,7 +8,8 @@ def rangetest(*argchecks):
                     if args[ix] < low or args[ix] > high:
                         errmsg = 'Argument %s not in %s..%s' % (ix, low, high)
                         raise TypeError(errmsg)
-                return onCall
-        return onDecorator
+                return func(*args)
+            return onCall
+    return onDecorator
 
 
