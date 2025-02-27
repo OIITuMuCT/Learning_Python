@@ -1,0 +1,9 @@
+class Extras:
+    def extra(self, args):
+        print(f'args = "{args}", call method extra class Extrhas')
+class Client1(Extras): ...
+class Client2(Extras): ...
+class Client3(Extras): ...
+
+X = Client1()
+X.extra('Bool')
