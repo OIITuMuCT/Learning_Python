@@ -10,8 +10,8 @@ def decorateAll(decorator):
             return type.__new__(meta, classname, supers, classdict)
     return MetaDecorate
 
-class Person(metaclass=decorateAll(timer())):
-# class Person(metaclass=decorateAll(tracer)):
+# class Person(metaclass=decorateAll(timer())):
+class Person(metaclass=decorateAll(tracer)):
     def __init__(self, name, pay):
         self.name = name
         self.pay = pay
