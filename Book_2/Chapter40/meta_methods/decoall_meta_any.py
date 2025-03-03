@@ -27,6 +27,8 @@ if __name__ == '__main__':
     sue.giveRaise(.10)
     print('%.2f' % sue.pay)
     print(bob.lastName(), sue.lastName())
+
+    # Если используется timer: суммарное время для каждого метода
     print('-' * 40)
     print('%.5f' % Person.__init__.alltime)
     print('%.5f' % Person.giveRaise.alltime)
