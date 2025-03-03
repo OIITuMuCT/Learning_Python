@@ -1,5 +1,5 @@
 from types import FunctionType
-from decorator import tracer, timer
+from decotools import tracer, timer
 
 def decorateAll(decorator):
     class MetaDecorate(type):
@@ -10,7 +10,8 @@ def decorateAll(decorator):
             return type.__new__(meta, classname, supers, classdict)
     return MetaDecorate
 
-class Person(metaclass=decorateAll(tracer)):
+class Person(metaclass=decorateAll(timer())):
+# class Person(metaclass=decorateAll(tracer)):
     def __init__(self, name, pay):
         self.name = name
         self.pay = pay
@@ -20,4 +21,13 @@ class Person(metaclass=decorateAll(tracer)):
         return self.name.split()[-1]
 
 if __name__ == '__main__':
-    bob = Person('Bob Smith')
+    bob = Person('Bob Smith', 50000)
+    sue = Person('Sue Jones', 100000)
+    print(bob.name, sue.name)
+    sue.giveRaise(.10)
+    print('%.2f' % sue.pay)
+    print(bob.lastName(), sue.lastName())
+    print('-' * 40)
+    print('%.5f' % Person.__init__.alltime)
+    print('%.5f' % Person.giveRaise.alltime)
+    print('%.5f' % Person.lastName.alltime)
